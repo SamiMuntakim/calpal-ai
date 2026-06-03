@@ -76,7 +76,7 @@ const googleSignInConfig = {
 module.exports = {
   name: "CalPal",
   slug: "calpal-ai",
-  version: "3",
+  version: "5",
   orientation: "portrait",
   icon: "./assets/images/calpal-logo.png",
   userInterfaceStyle: "light",
@@ -92,24 +92,25 @@ module.exports = {
       backgroundColor: "#ffffff",
     },
     package: "com.calpal.ai",
-    versionCode: 3,
+    versionCode: 5,
     permissions: [
       "CAMERA",
       "READ_EXTERNAL_STORAGE",
       "BILLING", // Required for in-app purchases
     ],
-    runtimeVersion: "3",
+    runtimeVersion: "5",
   },
   ios: {
     supportsTablet: true,
     bundleIdentifier: "com.calpal.ai",
-    buildNumber: "3",
+    buildNumber: "1",
     usesAppleSignIn: true,
     infoPlist: {
       NSCameraUsageDescription:
         "CalPal needs camera access so you can snap a photo of your meal. The photo is sent to our AI service to estimate the calories and macros.",
       NSPhotoLibraryUsageDescription:
         "CalPal needs photo library access so you can pick an existing meal photo. The photo is sent to our AI service to estimate the calories and macros.",
+      ITSAppUsesNonExemptEncryption: false,
     },
     runtimeVersion: {
       policy: "appVersion",
