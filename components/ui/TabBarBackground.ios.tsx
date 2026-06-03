@@ -1,4 +1,3 @@
-import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 import { BlurView } from 'expo-blur';
 import { StyleSheet } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -15,8 +14,11 @@ export default function BlurTabBarBackground() {
   );
 }
 
+// useBottomTabBarHeight is no longer available from expo-router as of SDK 56.
+// This hook is only consumed by ParallaxScrollView (currently unused in the
+// app). We fall back to the safe-area bottom inset so any future consumer
+// still gets a reasonable value.
 export function useBottomTabOverflow() {
-  const tabHeight = useBottomTabBarHeight();
   const { bottom } = useSafeAreaInsets();
-  return tabHeight - bottom;
+  return bottom;
 }
